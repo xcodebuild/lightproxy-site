@@ -4,28 +4,7 @@
     ],
     "routes": [
         {
-            "src": "/(.*\\.js)",
-            "headers": {
-                "cache-control": "public, max-age=3600"
-            },
-            "dest": "https://alibaba.github.io/lightproxy/$1"
-        },
-        {
-            "src": "/(.*\\.css)",
-            "headers": {
-                "cache-control": "public, max-age=3600"
-            },
-            "dest": "https://alibaba.github.io/lightproxy/$1"
-        },
-        {
-            "src": "/(.*\\.png)",
-            "headers": {
-                "cache-control": "public, max-age=3600"
-            },
-            "dest": "https://alibaba.github.io/lightproxy/$1"
-        },
-        {
-            "src": "/(.*\\.jpeg)",
+            "src": "/(.*\\.js|.*\\.css|.*\\.png|.*\\.jpeg)",
             "headers": {
                 "cache-control": "public, max-age=3600"
             },
@@ -36,7 +15,7 @@
             "headers": {
                 "cache-control": "public, max-age=3600"
             },
-            "dest": "https://alibaba.github.io/lightproxy/"
+            "dest": "https://alibaba.github.io/lightproxy/index.html"
         }
     ],
     "github": {
