@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "alias": [
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "headers": {
+                "cache-control": "public, max-age=3600"
+            },
+            "dest": "https://alibaba.github.io/lightproxy/$1"
+        }
+    ],
+    "github": {
+        "enabled": true,
+        "autoJobCancelation": true
+    }
+}
