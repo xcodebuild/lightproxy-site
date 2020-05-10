@@ -1,0 +1,22 @@
+{
+    "name": "custom-server-koa",
+    "version": "1.0.0",
+    "scripts": {
+      "dev": "node index.js",
+      "build": "echo",
+      "start": "cross-env NODE_ENV=production node index.js"
+    },
+    "dependencies": {
+      "@koa/router": "^8.0.7",
+      "cross-env": "^5.2.0",
+      "koa": "^2.0.1",
+      "koa-useragent": "^4.0.0",
+      "next": "latest",
+      "node-fetch": "^2.6.0",
+      "react": "^16.7.0",
+      "react-dom": "^16.7.0"
+    },
+    "devDependencies": {
+      "webpack": "^4.43.0"
+    }
+  }

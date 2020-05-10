@@ -1,25 +1,15 @@
 {
     "version": 2,
-    "alias": [
+    "builds": [
+        {
+            "src": "*.js",
+            "use": "@now/node-server"
+        }
     ],
     "routes": [
         {
-            "src": "/(.*\\.js|.*\\.css|.*\\.png|.*\\.jpeg)",
-            "headers": {
-                "cache-control": "public, max-age=3600"
-            },
-            "dest": "https://alibaba.github.io/lightproxy/$1"
-        },
-        {
-            "src": "/(.*)",
-            "headers": {
-                "cache-control": "public, max-age=3600"
-            },
-            "dest": "https://alibaba.github.io/lightproxy/index.html"
+            "src": "(.*)",
+            "dest": "/index.js"
         }
-    ],
-    "github": {
-        "enabled": true,
-        "autoJobCancelation": true
-    }
+    ]
 }
