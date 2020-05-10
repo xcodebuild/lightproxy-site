@@ -18,9 +18,11 @@ server.use(router.routes())
 router.all('*', async ctx => {
     if (ctx.url.endsWith('.png') || ctx.url.endsWith('.jepg')) {
         ctx.redirect(`https://cdn.jsdelivr.net/gh/alibaba/lightproxy@gh-pages/${ctx.request.path}`);
+        ctx.set('cache-control', 'public, max-age=604800, s-maxage=43200');
     } else {
         const res = await fetch('https://cdn.jsdelivr.net/gh/alibaba/lightproxy@gh-pages/index.html');
         const text = (await res.text()).replace(/(\/umi\..*?\.js|\/umi\..*?\.css)/g, 'https://cdn.jsdelivr.net/gh/alibaba/lightproxy@gh-pages/$1');
+        ctx.set('cache-control', 'public, s-maxage=3600');
         ctx.body = text;
     }
 });
