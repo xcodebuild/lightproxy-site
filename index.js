@@ -22,7 +22,7 @@ router.all('*', async ctx => {
     } else {
         const res = await fetch('https://cdn.jsdelivr.net/gh/alibaba/lightproxy@gh-pages/index.html');
         const text = (await res.text()).replace(/(\/umi\..*?\.js|\/umi\..*?\.css)/g, 'https://cdn.jsdelivr.net/gh/alibaba/lightproxy@gh-pages/$1');
-        ctx.set('cache-control', 'public, s-maxage=3600');
+        ctx.set('cache-control', 's-maxage=1, stale-while-revalidate');
         ctx.body = text;
     }
 });
