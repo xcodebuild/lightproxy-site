@@ -16,7 +16,7 @@ router.use(userAgent);
 server.use(router.routes())
 
 router.all('*', async ctx => {
-    if (ctx.url.endsWith('.png') || ctx.url.endsWith('.jepg')) {
+    if (ctx.url.endsWith('.png') || ctx.url.endsWith('.jpeg')) {
         ctx.redirect(`https://cdn.jsdelivr.net/gh/alibaba/lightproxy@gh-pages/${ctx.request.path}`);
         ctx.set('cache-control', 'public, max-age=604800, s-maxage=43200');
     } else {
