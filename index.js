@@ -24,6 +24,7 @@ router.all('*', async ctx => {
         const res = await fetch('https://raw.githubusercontent.com/alibaba/lightproxy/gh-pages/sitemap.xml');
         const text = await res.text();
         ctx.set('cache-control', 's-maxage=1, stale-while-revalidate');
+        ctx.set('content-type', 'application/xml');
         ctx.body = text;
     } else {
         const res = await fetch('https://raw.githubusercontent.com/alibaba/lightproxy/gh-pages/index.html');
